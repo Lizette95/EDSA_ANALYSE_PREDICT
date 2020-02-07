@@ -46,5 +46,12 @@ def extract_municipality_hashtags(df):
 ### FUNCTION 5: Number Of Tweets Per Day ###
 
 ### FUNCTION 6: Word Splitter ###
+def word_splitter(df):
+    df['Split Tweets'] = df['Tweets'].values.tolist() 
+    Split_tweets = df['Split Tweets']#.values.tolist()
+    list_of_list = [[i.lower()] for i in Split_tweets]
+    splitting_the_list_of_list = [item[0].split() for item in list_of_list]
+    df['Split Tweets'] = splitting_the_list_of_list    
+    return df
 
 ### FUNCTION 7: Stop Word Remover ###
