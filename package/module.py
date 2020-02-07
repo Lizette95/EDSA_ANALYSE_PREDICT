@@ -2,7 +2,10 @@
 
 def dictionary_of_metrics(items):
     """
-    Add docstring here...
+    This function calculate metrics from Eskom data 
+    and output the metrics
+    as a dictionary of 5 number summary i.e mean,
+    median,maximum,minimum,standard Deviation and variance
     """
     add_items = sum(items)
     items_len = len(items)
