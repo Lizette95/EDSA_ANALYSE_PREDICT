@@ -53,7 +53,8 @@ def dictionary_of_metrics(items):
 ### FUNCTION 2: Five Number Summary ###
 
 ### FUNCTION 3: Date Parser ###
-def dateparser(dates):
+def date_parser(dates):
+    """Takes in a datetime and outputs date"""
     date = [entry[0:10] for entry in dates]
     return date
 ### FUNCTION 4: Hashtag & Municipality Extractor ###
