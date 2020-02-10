@@ -103,3 +103,21 @@ def word_splitter(df):
     return df
 
 ### FUNCTION 7: Stop Word Remover ###
+def stop_words_remover(df):
+    try:
+        stop_w =  stop_words_dict
+        df['Without Stop Words'] = df['Tweets'].values.tolist() 
+        Without_Stop_Words = df['Without Stop Words']
+        list_of_lists = [[i.lower()] for i in Without_Stop_Words]
+        Splitting_the_list_of_lists = [word[0].split() for word in list_of_lists]
+        list_in_a_list = Splitting_the_list_of_lists
+        list_without_stop_words = []
+        for k in stop_w:
+            Stop_Words = stop_w[k]
+        for list1 in list_in_a_list:
+            filteredtext = [t for t in list1 if t not in Stop_Words]
+            list_without_stop_words.append(filteredtext)     
+        df['Without Stop Words'] = list_without_stop_words
+        return df
+    except TypeError:
+        print('incorrect input you must input a dataframe') 
