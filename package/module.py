@@ -2,10 +2,10 @@
 
 def dictionary_of_metrics(items):
     """
-    This function calculate metrics from Eskom data 
-    and output the metrics
-    as a dictionary of 5 number summary i.e mean,
-    median,maximum,minimum,standard Deviation and variance
+    This function calculates metrics from Eskom data
+    and outputs the metrics as a dictionary of a
+    5 number summary i.e. mean, median, variance,
+    standard deviation, minimum and maximum.
     """
     add_items = sum(items)
     items_len = len(items)
@@ -35,6 +35,13 @@ def dictionary_of_metrics(items):
     for num in items:
         if max_val < num:
             max_val = num
+#     #Test with numpy functions
+#     mean = np.mean(items)
+#     median = np.median(items)
+#     variance = np.var(items,ddof=1)
+#     standard_dev = np.std(items,ddof=1)
+#     min_val = min(items)
+#     max_val = max(items)
     #Result
     return {'mean': round(mean,2),
             'median': round(median,2),
@@ -83,7 +90,9 @@ def extract_municipality_hashtags(df):
 
 def number_of_tweets_per_day(df):
     """
-    Add docstring here...
+    This function takes in a pandas dataframe of tweets and
+    returns a new dataframe, grouped by day, with the number of tweets
+    for that day. The date colummn is set as the index of the new dataframe.
     """
     df['Dates'] = df.Date.str[0:10]
     count = df['Dates'].value_counts()
@@ -95,18 +104,24 @@ def number_of_tweets_per_day(df):
 
 ### FUNCTION 6: Word Splitter ###
 def word_splitter(df):
-    df['Split Tweets'] = df['Tweets'].values.tolist() 
+    """
+    Add docstring
+    """
+    df['Split Tweets'] = df['Tweets'].values.tolist()
     Split_tweets = df['Split Tweets']#.values.tolist()
     list_of_list = [[i.lower()] for i in Split_tweets]
     splitting_the_list_of_list = [item[0].split() for item in list_of_list]
-    df['Split Tweets'] = splitting_the_list_of_list    
+    df['Split Tweets'] = splitting_the_list_of_list
     return df
 
 ### FUNCTION 7: Stop Word Remover ###
 def stop_words_remover(df):
+    """
+    Add docstring
+    """
     try:
         stop_w =  stop_words_dict
-        df['Without Stop Words'] = df['Tweets'].values.tolist() 
+        df['Without Stop Words'] = df['Tweets'].values.tolist()
         Without_Stop_Words = df['Without Stop Words']
         list_of_lists = [[i.lower()] for i in Without_Stop_Words]
         Splitting_the_list_of_lists = [word[0].split() for word in list_of_lists]
@@ -116,8 +131,8 @@ def stop_words_remover(df):
             Stop_Words = stop_w[k]
         for list1 in list_in_a_list:
             filteredtext = [t for t in list1 if t not in Stop_Words]
-            list_without_stop_words.append(filteredtext)     
+            list_without_stop_words.append(filteredtext)
         df['Without Stop Words'] = list_without_stop_words
         return df
     except TypeError:
-        print('incorrect input you must input a dataframe') 
+        print('incorrect input you must input a dataframe')
