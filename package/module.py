@@ -45,8 +45,8 @@ def dictionary_of_metrics(items):
     #Result
     return {'mean': round(mean,2),
             'median': round(median,2),
-            'variance': round(variance,2),
-            'standard deviation': round(standard_dev,2),
+            'var': round(variance,2),
+            'std': round(standard_dev,2),
             'min': round(min_val,2),
             'max': round(max_val,2)}
 
