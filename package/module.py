@@ -66,7 +66,7 @@ Items = sorted([39660.0,
          25275.0])
 
 def find_median(sorted_list):
-    indices = []##Created an empty list 
+    indices = []##Created an empty list
 
     list_size = len(sorted_list)## sorted list
     median = 0
@@ -90,17 +90,17 @@ median, median_indices = find_median(Items)
 Q1, Q1_indices = find_median(Items[:median_indices[0] + 1])
 Q3, Q3_indices = find_median(Items[median_indices[-2]:])
 
-
-
 quartiles = [Q1, median, Q3]
 
 print("(Q1, median, Q3): {}".format(quartiles))
 
 ### FUNCTION 3: Date Parser ###
+
 def date_parser(dates):
     """Takes in a datetime and outputs date"""
     date = [entry[0:10] for entry in dates]
     return date
+
 ### FUNCTION 4: Hashtag & Municipality Extractor ###
 
 def extract_municipality_hashtags(df):
@@ -111,6 +111,7 @@ def extract_municipality_hashtags(df):
     Municipalities and hashtags are added as new columns and
     the modified dataframe is returned.
     """
+    #Make new dataframe from df
     new_data = df
     municipalities_list = []
     hashtags_list = []
@@ -141,15 +142,20 @@ def number_of_tweets_per_day(df):
     returns a new dataframe, grouped by day, with the number of tweets
     for that day. The date colummn is set as the index of the new dataframe.
     """
+    #Extract date
     df['Dates'] = df.Date.str[0:10]
+    #Count number of tweets per day
     count = df['Dates'].value_counts()
+    #Make new dataframe and set index
     df_count = pd.DataFrame(count)
     new_df = df_count.reset_index()
     new_df.columns = ['Date', 'Tweets']
     new_df = new_df.sort_values(by=['Date']).set_index('Date')
+    #Return new dataframe
     return new_df
 
 ### FUNCTION 6: Word Splitter ###
+
 def word_splitter(df):
     """
     Add docstring
@@ -162,6 +168,7 @@ def word_splitter(df):
     return df
 
 ### FUNCTION 7: Stop Word Remover ###
+
 def stop_words_remover(df):
     """
     Add docstring
