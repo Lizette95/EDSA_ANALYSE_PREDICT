@@ -158,35 +158,62 @@ def number_of_tweets_per_day(df):
 
 def word_splitter(df):
     """
-    Add docstring
+    Word Splitter is a function which splits the sentences 
+    in a dataframe's column into a list of the separate words.
+    This function takes in a pandas dataframe as an input and
+    returns the modified dataframe.
     """
-    df['Split Tweets'] = df['Tweets'].values.tolist()
-    Split_tweets = df['Split Tweets']#.values.tolist()
-    list_of_list = [[i.lower()] for i in Split_tweets]
-    splitting_the_list_of_list = [item[0].split() for item in list_of_list]
-    df['Split Tweets'] = splitting_the_list_of_list
-    return df
+    try:
+        # We create a new column in the dataframe with the tweets and make it a list
+        df['Split Tweets'] = df['Tweets'].values.tolist()
+        # create a new valiable to contain the the list
+        Split_tweets = df['Split Tweets']
+        # We make sure that the words are lower case and make the list a of lists
+        list_of_list = [[i.lower()] for i in Split_tweets]
+        # We split the sentence into individual words in the list of lists
+        splitting_the_list_of_list = [item[0].split() for item in list_of_list]
+        # We put the list of lists into the dataframe column named Split Tweets
+        df['Split Tweets'] = splitting_the_list_of_list
+        # We return the whole modified dataframe
+        return df
+        # When a person inputs any other type other than a pandas dataframe they get a typeError
+    except TypeError:
+        print('incorrect input you must input a dataframe')
 
 ### FUNCTION 7: Stop Word Remover ###
 
 def stop_words_remover(df):
     """
-    Add docstring
+    Stop Words Remover is a function which removes english stop words from a tweets.
+    This function takes in a pandas dataframe as an input and
+    returns the modified dataframe.
     """
     try:
+        # this variable take the dictionary of stop words
         stop_w =  stop_words_dict
+        # We create a new column in the dataframe with the tweets and make it a list
         df['Without Stop Words'] = df['Tweets'].values.tolist()
-        Without_Stop_Words = df['Without Stop Words']
-        list_of_lists = [[i.lower()] for i in Without_Stop_Words]
-        Splitting_the_list_of_lists = [word[0].split() for word in list_of_lists]
-        list_in_a_list = Splitting_the_list_of_lists
+        #  create a new valiable to contain the the list
+        without_stop_words = df['Without Stop Words']
+        # We make sure that the words are lower case and make the list a of lists
+        list_of_lists = [[i.lower()] for i in without_stop_words]
+        # We split the sentence into individual words in the list of lists
+        splitting_the_list_of_lists = [word[0].split() for word in list_of_lists]
+        # this variable has the list of lists of individual words of tweets
+        list_in_a_list = splitting_the_list_of_lists
+        # We create an empty list
         list_without_stop_words = []
+        # We loop through the dictionary of stop words
         for k in stop_w:
-            Stop_Words = stop_w[k]
+            stop_words = stop_w[k]
+        # We loop through the list of lists to compare with words in the dictionary    
         for list1 in list_in_a_list:
-            filteredtext = [t for t in list1 if t not in Stop_Words]
+            filteredtext = [t for t in list1 if t not in stop_words]
             list_without_stop_words.append(filteredtext)
+        # We put the list of list into a pandas dataframe column named Without Stop Words
         df['Without Stop Words'] = list_without_stop_words
+        # We return the whole modified dataframe
         return df
+        # When a person inputs any other type other than a pandas dataframe they get a typeError
     except TypeError:
         print('incorrect input you must input a dataframe')
