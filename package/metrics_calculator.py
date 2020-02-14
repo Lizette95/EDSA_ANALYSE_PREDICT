@@ -52,7 +52,7 @@ def dictionary_of_metrics(items):
 
 ### FUNCTION 2: Five Number Summary ###
 
-def five_number_summary(items):
+def five_num_summary(items):
     """This function returns a dictonary of the five(5) number summary"""
     #maximum value
     max_value = np.max(np.array(items))

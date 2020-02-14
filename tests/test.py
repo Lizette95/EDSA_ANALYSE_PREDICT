@@ -83,9 +83,7 @@ assert dictionary_of_metrics(items) == {'mean': 26244.42,
 
 ### FUNCTION 2: Five Number Summary ###
 
-from metrics_calculator import five_number_summary
-# Do some tests here
-
+from metrics_calculator import five_num_summary
 items = [39660.0,
          36024.0,
          32127.0,
@@ -98,7 +96,7 @@ items = [39660.0,
          18730.0,
          19261.0,
          25275.0]
-assert five_number_summary(gauteng) == {'max': 39660.0,
+assert five_num_summary(gauteng) == {'max': 39660.0,
                            'median': 24403.5,
                            'min': 8842.0,
                            'q1': 18422.5,
