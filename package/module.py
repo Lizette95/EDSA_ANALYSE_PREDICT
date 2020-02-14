@@ -106,7 +106,7 @@ def date_parser(dates):
 def extract_municipality_hashtags(df):
     """
     This function takes in a pandas dataframe of tweets and
-    extracts municipalities using a dictionary of municipalities.
+    extracts municipalities with a user-defined dictionary of municipalities.
     Hashtags are also extracted and returned as a list.
     Municipalities and hashtags are added as new columns and
     the modified dataframe is returned.
@@ -140,7 +140,7 @@ def number_of_tweets_per_day(df):
     """
     This function takes in a pandas dataframe of tweets and
     returns a new dataframe, grouped by day, with the number of tweets
-    for that day. The date colummn is set as the index of the new dataframe.
+    for that day. The date column is set as the index of the new dataframe.
     """
     #Extract date
     df['Dates'] = df.Date.str[0:10]
@@ -158,7 +158,7 @@ def number_of_tweets_per_day(df):
 
 def word_splitter(df):
     """
-    Word Splitter is a function which splits the sentences 
+    Word Splitter is a function which splits the sentences
     in a dataframe's column into a list of the separate words.
     This function takes in a pandas dataframe as an input and
     returns the modified dataframe.
@@ -206,7 +206,7 @@ def stop_words_remover(df):
         # We loop through the dictionary of stop words
         for k in stop_w:
             stop_words = stop_w[k]
-        # We loop through the list of lists to compare with words in the dictionary    
+        # We loop through the list of lists to compare with words in the dictionary
         for list1 in list_in_a_list:
             filteredtext = [t for t in list1 if t not in stop_words]
             list_without_stop_words.append(filteredtext)

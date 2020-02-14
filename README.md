@@ -15,11 +15,21 @@ The function returns a list of strings where each element in the returned list c
 
 FUNCTION 4: Hashtag & Municipality Extractor
 
+This function takes in a pandas dataframe of tweets and
+extracts municipalities with a user-defined dictionary of municipalities.
+Hashtags are also extracted and returned as a list.
+Municipalities and hashtags are added as new columns and
+the modified dataframe is returned.
+
 FUNCTION 5: Number Of Tweets Per Day
+
+This function takes in a pandas dataframe of tweets and
+returns a new dataframe, grouped by day, with the number of tweets
+for that day. The date column is set as the index of the new dataframe.
 
 FUNCTION 6: Word Splitter
 
-Word Splitter is a function which splits the sentences 
+Word Splitter is a function which splits the sentences
 in a dataframe's column into a list of the separate words.
 This function takes in a pandas dataframe as an input and
 returns the modified dataframe.
