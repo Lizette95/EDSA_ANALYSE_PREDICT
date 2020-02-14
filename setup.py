@@ -9,5 +9,5 @@ setup(
     long_description=open('README.md').read(),
     install_requires=['numpy','pandas'],
     url='https://github.com/MENZI-MCHUNU/EDSA_ANALYSE_PREDICT.git',
-    author='<Your Name>',
-    author_email='<Your Email>'
+    author='Team 20 Jhb',
+    author_email='menzi639@gmail.com'
