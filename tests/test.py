@@ -1,3 +1,4 @@
+### before running the test we need the twitter_df dataframe to be run first ###
 ### FUNCTION 1: Metric Dictionary ###
 
 from module import dictionary_of_metrics
