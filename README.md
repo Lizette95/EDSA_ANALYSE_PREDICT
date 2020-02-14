@@ -3,6 +3,8 @@ Building Functions to Calculate Metrics using Data
 
 FUNCTION 1: Metric Dictionary
 
+The function takes in a list of integers and returns a dictionary of the mean, median, variance, standard deviation, min and max. All answers are rounded to the second decimal.
+
 FUNCTION 2: Five Number Summary
 
 FUNCTION 3: Date Parser
