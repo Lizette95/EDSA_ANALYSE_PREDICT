@@ -41,7 +41,8 @@ assert extract_municipality_hashtags(twitter_df.copy()).loc[5, "municipality"] =
 ### FUNCTION 5: Number Of Tweets Per Day ###
 
 from module import number_of_tweets_per_day
-# Do some tests here
+assert number_of_tweets_per_day(twitter_df.copy()).iloc[0] == 18, 'incorrect'
+assert number_of_tweets_per_day(twitter_df.copy()).iloc[1] == 11, 'incorrect'
 
 ### FUNCTION 6: Word Splitter ###
 
