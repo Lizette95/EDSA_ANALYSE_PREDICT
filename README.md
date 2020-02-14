@@ -14,6 +14,8 @@ The function takes in a list of integers and returns a dictionary of the mean, m
 
 ### FUNCTION 2: Five Number Summary
 
+This function returns a dictonary of the five(5) number summary
+
 ### FUNCTION 3: Date Parser
 
 The function takes a list of strings as input.
