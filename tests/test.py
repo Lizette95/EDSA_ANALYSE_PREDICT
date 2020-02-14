@@ -30,6 +30,8 @@ from module import five_num_summ
 
 from module import date_parser
 # Do some tests here
+date_parser(dates[:3]) == ['2019-11-29', '2019-11-29', '2019-11-29']
+date_parser(dates[-3:]) == ['2019-11-20', '2019-11-20', '2019-11-20']
 
 ### FUNCTION 4: Hashtag & Municipality Extractor ###
 
