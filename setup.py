@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='package',
+    name='metrics_calculator',
     version='0.1',
     packages=find_packages(exclude=['tests*']),
     license='MIT',
-    description='###',
+    description='A package for calculating metrics and analysing Twitter data',
     long_description=open('README.md').read(),
     install_requires=['numpy','pandas'],
-    url='https://github.com/<username>/<package-name>',
+    url='https://github.com/MENZI-MCHUNU/EDSA_ANALYSE_PREDICT.git',
     author='<Your Name>',
     author_email='<Your Email>'
