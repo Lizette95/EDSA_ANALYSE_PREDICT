@@ -184,7 +184,7 @@ def word_splitter(df):
 
 def stop_words_remover(df):
     """
-    Stop Words Remover is a function which removes english stop words from a tweets.
+    Stop Words Remover is a function which removes english stop words from  tweets.
     This function takes in a pandas dataframe as an input and
     returns the modified dataframe.
     """
