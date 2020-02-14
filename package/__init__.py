@@ -1,1 +1,1 @@
-from . import module
+from . import metrics_calculator
