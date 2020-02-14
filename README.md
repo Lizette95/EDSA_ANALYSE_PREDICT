@@ -7,6 +7,10 @@ FUNCTION 2: Five Number Summary
 
 FUNCTION 3: Date Parser
 
+The function takes a list of strings as input.
+Each string in the input list is formatted as 'yyyy-mm-dd hh:mm:ss'.
+The function returns a list of strings where each element in the returned list contains only the date in the 'yyyy-mm-dd' format.
+
 FUNCTION 4: Hashtag & Municipality Extractor
 
 FUNCTION 5: Number Of Tweets Per Day
