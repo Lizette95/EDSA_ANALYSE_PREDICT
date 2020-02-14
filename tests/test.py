@@ -44,8 +44,12 @@ from module import number_of_tweets_per_day
 
 from module import word_spliter
 # Do some tests here
+word_splitter(twitter_df.copy()).loc[0, "Split Tweets"] == ['@bongadlulane', 'please', 'send', 'an', 'email', 'to','mediadesk@eskom.co.za']
+
 
 ### FUNCTION 7: Stop Word Remover ###
 
 from module import stop_words_http_remover
 # Do some tests here
+stop_words_remover(twitter_df.copy()).loc[0, "Without Stop Words"] == ['@bongadlulane', 'send', 'email', 'mediadesk@eskom.co.za']
+stop_words_remover(twitter_df.copy()).loc[100, "Without Stop Words"] == ['#eskomnorthwest', '#mediastatement', ':', 'notice', 'supply', 'interruption', 'lichtenburg', 'area', 'https://t.co/7hfwvxllit']
