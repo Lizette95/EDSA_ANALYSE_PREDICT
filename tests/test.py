@@ -14,12 +14,12 @@ items = [39660.0,
          18730.0,
          19261.0,
          25275.0]
-dictionary_of_metrics(items) == {'mean': 26244.42,
+assert dictionary_of_metrics(items) == {'mean': 26244.42,
                                    'median': 24403.5,
                                    'variance': 108160153.17,
                                    'standard deviation': 10400.01,
                                    'min': 8842.0,
-                                   'max': 39660.0}
+                                   'max': 39660.0}, 'incorrect'
 
 ### FUNCTION 2: Five Number Summary ###
 
@@ -29,14 +29,14 @@ from module import five_num_summ
 ### FUNCTION 3: Date Parser ###
 
 from module import date_parser
-# Do some tests here
-date_parser(dates[:3]) == ['2019-11-29', '2019-11-29', '2019-11-29']
-date_parser(dates[-3:]) == ['2019-11-20', '2019-11-20', '2019-11-20']
+assert date_parser(dates[:3]) == ['2019-11-29', '2019-11-29', '2019-11-29'], 'incorrect'
+assert date_parser(dates[-3:]) == ['2019-11-20', '2019-11-20', '2019-11-20'], 'incorrect'
 
 ### FUNCTION 4: Hashtag & Municipality Extractor ###
 
 from module import extract_municipality_hashtags
-# Do some tests here
+assert extract_municipality_hashtags(twitter_df.copy()).loc[4, "hashtags"] == ['#eskomfreestate', '#mediastatement'], 'incorrect'
+assert extract_municipality_hashtags(twitter_df.copy()).loc[5, "municipality"] == "Johannesburg", 'incorrect'
 
 ### FUNCTION 5: Number Of Tweets Per Day ###
 
@@ -46,13 +46,11 @@ from module import number_of_tweets_per_day
 ### FUNCTION 6: Word Splitter ###
 
 from module import word_spliter
-# Do some tests here
-word_splitter(twitter_df.copy()).loc[0, "Split Tweets"] == ['@bongadlulane', 'please', 'send', 'an', 'email', 'to','mediadesk@eskom.co.za']
+assert word_splitter(twitter_df.copy()).loc[0, "Split Tweets"] == ['@bongadlulane', 'please', 'send', 'an', 'email', 'to','mediadesk@eskom.co.za'], 'incorrect'
 
 
 ### FUNCTION 7: Stop Word Remover ###
 
 from module import stop_words_http_remover
-# Do some tests here
-stop_words_remover(twitter_df.copy()).loc[0, "Without Stop Words"] == ['@bongadlulane', 'send', 'email', 'mediadesk@eskom.co.za']
-stop_words_remover(twitter_df.copy()).loc[100, "Without Stop Words"] == ['#eskomnorthwest', '#mediastatement', ':', 'notice', 'supply', 'interruption', 'lichtenburg', 'area', 'https://t.co/7hfwvxllit']
+assert stop_words_remover(twitter_df.copy()).loc[0, "Without Stop Words"] == ['@bongadlulane', 'send', 'email', 'mediadesk@eskom.co.za'], 'incorrect'
+assert stop_words_remover(twitter_df.copy()).loc[100, "Without Stop Words"] == ['#eskomnorthwest', '#mediastatement', ':', 'notice', 'supply', 'interruption', 'lichtenburg', 'area', 'https://t.co/7hfwvxllit'], 'incorrect'
