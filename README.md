@@ -1,11 +1,11 @@
 # EDSA_ANALYSE_PREDICT
-Building Functions to Calculate Metrics using Data
+Building Functions to Calculate Metrics using Eskom Data
 
 ## Building this package locally
 `python setup.py sdist`
 ## Installing this package from GitHub
 `pip install git+https://github.com/MENZI-MCHUNU/EDSA_ANALYSE_PREDICT.git`
-## Installing this package from GitHub
+## Upgrading this package from GitHub
 `pip install --upgrade git+https://github.com/MENZI-MCHUNU/EDSA_ANALYSE_PREDICT.git`
 
 ### FUNCTION 1: Metric Dictionary
