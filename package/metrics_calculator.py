@@ -52,47 +52,25 @@ def dictionary_of_metrics(items):
 
 ### FUNCTION 2: Five Number Summary ###
 
-Items = sorted([39660.0,
-         36024.0,
-         32127.0,
-         39488.0,
-         18422.0,
-         23532.0,
-         8842.0,
-         37416.0,
-         16156.0,
-         18730.0,
-         19261.0,
-         25275.0])
+def five_number_summary(items):
+    """This function returns a dictonary of the five(5) number summary"""
+    #maximum value
+    max_value = np.max(np.array(items))
+    #minimum value
+    min_value = np.min(np.array(items))
+    #median
+    median = np.median(np.array(items))
+    #Quartile1
+    q1 = np.percentile(np.array(items), 25)
+    #Quartile3
+    q3 = np.percentile(np.array(items), 75)
 
-def find_median(sorted_list):
-    indices = []##Created an empty list
+    return {'min' : round(min_value, 2),
+            'q1' : round(q1, 2),
+            'median' : round(median, 2),
+            'q3' : round(q3, 2),
+            'max' : round(max_value, 2)}
 
-    list_size = len(sorted_list)## sorted list
-    median = 0
-
-    if list_size % 2 == 0:## the remainder from the division by list_size equals zero
-        indices.append(int(list_size / 2) - 1)  # -1 because index starts from 0
-        indices.append(int(list_size / 2))
-
-        median = (sorted_list[indices[0]] + sorted_list[indices[1]]) / 2
-        pass
-    else:
-        indices.append(int(list_size / 2))
-
-        median = sorted_list[indices[0]]
-        pass
-
-    return median, indices
-    pass
-
-median, median_indices = find_median(Items)
-Q1, Q1_indices = find_median(Items[:median_indices[0] + 1])
-Q3, Q3_indices = find_median(Items[median_indices[-2]:])
-
-quartiles = [Q1, median, Q3]
-
-print("(Q1, median, Q3): {}".format(quartiles))
 
 ### FUNCTION 3: Date Parser ###
 
