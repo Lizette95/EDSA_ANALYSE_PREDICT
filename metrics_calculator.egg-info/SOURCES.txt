@@ -1,0 +1,9 @@
+README.md
+setup.py
+metrics_calculator.egg-info/PKG-INFO
+metrics_calculator.egg-info/SOURCES.txt
+metrics_calculator.egg-info/dependency_links.txt
+metrics_calculator.egg-info/requires.txt
+metrics_calculator.egg-info/top_level.txt
+package/__init__.py
+package/metrics_calculator.py

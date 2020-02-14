@@ -10,4 +10,4 @@ setup(
     install_requires=['numpy','pandas'],
     url='https://github.com/MENZI-MCHUNU/EDSA_ANALYSE_PREDICT.git',
     author='Team 20 Jhb',
-    author_email='menzi639@gmail.com'
+    author_email='menzi639@gmail.com')
