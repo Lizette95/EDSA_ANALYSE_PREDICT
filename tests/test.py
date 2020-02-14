@@ -83,8 +83,26 @@ assert dictionary_of_metrics(items) == {'mean': 26244.42,
 
 ### FUNCTION 2: Five Number Summary ###
 
-from metrics_calculator import five_num_summ
+from metrics_calculator import five_number_summary
 # Do some tests here
+
+items = [39660.0,
+         36024.0,
+         32127.0,
+         39488.0,
+         18422.0,
+         23532.0,
+         8842.0,
+         37416.0,
+         16156.0,
+         18730.0,
+         19261.0,
+         25275.0]
+assert five_number_summary(gauteng) == {'max': 39660.0,
+                           'median': 24403.5,
+                           'min': 8842.0,
+                           'q1': 18422.5,
+                           'q3': 36024.5}, 'incorrect'
 
 ### FUNCTION 3: Date Parser ###
 
