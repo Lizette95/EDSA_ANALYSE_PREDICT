@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 ### FUNCTION 1: Metric Dictionary ###
 
 def dictionary_of_metrics(items):
