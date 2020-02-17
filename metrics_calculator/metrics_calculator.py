@@ -56,29 +56,28 @@ def dictionary_of_metrics(items):
 ### FUNCTION 2: Five Number Summary ###
 
 def five_num_summary(items):
-    """This function returns a dictonary of the five(5) number summary"""
+    """This function returns a dictonary of the five(5) number summary."""
     #maximum value
     max_value = np.max(np.array(items))
-    #minimum value
-    min_value = np.min(np.array(items))
     #median
     median = np.median(np.array(items))
+    #minimum value
+    min_value = np.min(np.array(items))
     #Quartile1
     q1 = np.percentile(np.array(items), 25)
     #Quartile3
     q3 = np.percentile(np.array(items), 75)
 
-    return {'min' : round(min_value, 2),
-            'q1' : round(q1, 2),
+    return {'max' : round(max_value, 2),
             'median' : round(median, 2),
-            'q3' : round(q3, 2),
-            'max' : round(max_value, 2)}
-
+            'min' : round(min_value, 2),
+            'q1' : round(q1, 2),
+            'q3' : round(q3, 2)}
 
 ### FUNCTION 3: Date Parser ###
 
 def date_parser(dates):
-    """Takes in a datetime and outputs date"""
+    """Takes in a datetime and outputs date."""
     date = [entry[0:10] for entry in dates]
     return date
 
@@ -159,15 +158,15 @@ def word_splitter(df):
         return df
         # When a person inputs any other type other than a pandas dataframe they get a typeError
     except TypeError:
-        print('incorrect input you must input a dataframe')
+        print('Incorrect input, you must input a dataframe')
 
 ### FUNCTION 7: Stop Word Remover ###
 
 def stop_words_remover(df):
     """
-    Stop Words Remover is a function which removes english stop words from  tweets.
-    This function takes in a pandas dataframe as an input and
-    returns the modified dataframe.
+    Stop Words Remover is a function which removes English stop words from tweets.
+    This function takes in a pandas dataframe as input and returns the
+    modified dataframe.
     """
     try:
         # this variable take the dictionary of stop words
@@ -197,4 +196,4 @@ def stop_words_remover(df):
         return df
         # When a person inputs any other type other than a pandas dataframe they get a typeError
     except TypeError:
-        print('incorrect input you must input a dataframe')
+        print('Incorrect input, you must input a dataframe')

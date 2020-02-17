@@ -59,9 +59,6 @@ stop_words_dict = {
     ]
 }
 
-### FUNCTION 1: Metric Dictionary ###
-
-from metrics_calculator import dictionary_of_metrics
 items = [39660.0,
          36024.0,
          32127.0,
@@ -74,6 +71,10 @@ items = [39660.0,
          18730.0,
          19261.0,
          25275.0]
+
+### FUNCTION 1: Metric Dictionary ###
+
+from metrics_calculator import dictionary_of_metrics
 assert dictionary_of_metrics(items) == {'mean': 26244.42,
                                    'median': 24403.5,
                                    'variance': 108160153.17,
@@ -84,18 +85,6 @@ assert dictionary_of_metrics(items) == {'mean': 26244.42,
 ### FUNCTION 2: Five Number Summary ###
 
 from metrics_calculator import five_num_summary
-items = [39660.0,
-         36024.0,
-         32127.0,
-         39488.0,
-         18422.0,
-         23532.0,
-         8842.0,
-         37416.0,
-         16156.0,
-         18730.0,
-         19261.0,
-         25275.0]
 assert five_num_summary(gauteng) == {'max': 39660.0,
                            'median': 24403.5,
                            'min': 8842.0,
