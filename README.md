@@ -14,7 +14,7 @@ The function takes in a list of integers and returns a dictionary of the mean, m
 
 ### FUNCTION 2: Five Number Summary
 
-This function returns a dictonary of the five(5) number summary
+This function returns a dictionary of the five(5) number summary.
 
 ### FUNCTION 3: Date Parser
 
@@ -45,6 +45,6 @@ returns the modified dataframe.
 
 ### FUNCTION 7: Stop Word Remover
 
-Stop Words Remover is a function which removes english stop words from tweets.
+Stop Words Remover is a function which removes English stop words from tweets.
 This function takes in a pandas dataframe as an input and
 returns the modified dataframe.
