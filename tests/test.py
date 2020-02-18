@@ -77,8 +77,8 @@ items = [39660.0,
 
 assert mc.dictionary_of_metrics(items) == {'mean': 26244.42,
                                    'median': 24403.5,
-                                   'variance': 108160153.17,
-                                   'standard deviation': 10400.01,
+                                   'var': 108160153.17,
+                                   'std': 10400.01,
                                    'min': 8842.0,
                                    'max': 39660.0}, 'incorrect'
 
