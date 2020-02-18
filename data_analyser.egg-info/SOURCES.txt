@@ -1,0 +1,9 @@
+README.md
+setup.py
+data_analyser/__init__.py
+data_analyser/metrics_calculator.py
+data_analyser.egg-info/PKG-INFO
+data_analyser.egg-info/SOURCES.txt
+data_analyser.egg-info/dependency_links.txt
+data_analyser.egg-info/requires.txt
+data_analyser.egg-info/top_level.txt
