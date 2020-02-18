@@ -84,11 +84,12 @@ assert mc.dictionary_of_metrics(items) == {'mean': 26244.42,
 
 ### FUNCTION 2: Five Number Summary ###
 
-assert mc.five_num_summary(gauteng) == {'max': 39660.0,
-                           'median': 24403.5,
-                           'min': 8842.0,
-                           'q1': 18422.5,
-                           'q3': 36024.5}, 'incorrect'
+assert mc.five_num_summary(gauteng) == {
+    'max': 39660.0,
+    'median': 24403.5,
+    'min': 8842.0,
+    'q1': 18653.0,
+    'q3': 36372.0}, 'incorrect'
 
 ### FUNCTION 3: Date Parser ###
 
