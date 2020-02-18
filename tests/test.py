@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+from data_analyser import metrics_calculator as mc
 ebp_url = 'https://raw.githubusercontent.com/Explore-AI/Public-Data/master/Data/electrification_by_province.csv'
 ebp_df = pd.read_csv(ebp_url)
 for col, row in ebp_df.iloc[:,1:].iteritems():
@@ -74,8 +75,7 @@ items = [39660.0,
 
 ### FUNCTION 1: Metric Dictionary ###
 
-from metrics_calculator import dictionary_of_metrics
-assert dictionary_of_metrics(items) == {'mean': 26244.42,
+assert mc.dictionary_of_metrics(items) == {'mean': 26244.42,
                                    'median': 24403.5,
                                    'variance': 108160153.17,
                                    'standard deviation': 10400.01,
@@ -84,8 +84,7 @@ assert dictionary_of_metrics(items) == {'mean': 26244.42,
 
 ### FUNCTION 2: Five Number Summary ###
 
-from metrics_calculator import five_num_summary
-assert five_num_summary(gauteng) == {'max': 39660.0,
+assert mc.five_num_summary(gauteng) == {'max': 39660.0,
                            'median': 24403.5,
                            'min': 8842.0,
                            'q1': 18422.5,
@@ -93,30 +92,25 @@ assert five_num_summary(gauteng) == {'max': 39660.0,
 
 ### FUNCTION 3: Date Parser ###
 
-from metrics_calculator import date_parser
-assert date_parser(dates[:3]) == ['2019-11-29', '2019-11-29', '2019-11-29'], 'incorrect'
-assert date_parser(dates[-3:]) == ['2019-11-20', '2019-11-20', '2019-11-20'], 'incorrect'
+assert mc.date_parser(dates[:3]) == ['2019-11-29', '2019-11-29', '2019-11-29'], 'incorrect'
+assert mc.date_parser(dates[-3:]) == ['2019-11-20', '2019-11-20', '2019-11-20'], 'incorrect'
 
 ### FUNCTION 4: Hashtag & Municipality Extractor ###
 
-from metrics_calculator import extract_municipality_hashtags
-assert extract_municipality_hashtags(twitter_df.copy()).loc[4, "hashtags"] == ['#eskomfreestate', '#mediastatement'], 'incorrect'
-assert extract_municipality_hashtags(twitter_df.copy()).loc[5, "municipality"] == "Johannesburg", 'incorrect'
+assert mc.extract_municipality_hashtags(twitter_df.copy()).loc[4, "hashtags"] == ['#eskomfreestate', '#mediastatement'], 'incorrect'
+assert mc.extract_municipality_hashtags(twitter_df.copy()).loc[5, "municipality"] == "Johannesburg", 'incorrect'
 
 ### FUNCTION 5: Number Of Tweets Per Day ###
 
-from metrics_calculator import number_of_tweets_per_day
-assert number_of_tweets_per_day(twitter_df.copy()).iloc[0] == 18, 'incorrect'
-assert number_of_tweets_per_day(twitter_df.copy()).iloc[1] == 11, 'incorrect'
+assert mc.number_of_tweets_per_day(twitter_df.copy()).iloc[0] == 18, 'incorrect'
+assert mc.number_of_tweets_per_day(twitter_df.copy()).iloc[1] == 11, 'incorrect'
 
 ### FUNCTION 6: Word Splitter ###
 
-from metrics_calculator import word_spliter
-assert word_splitter(twitter_df.copy()).loc[0, "Split Tweets"] == ['@bongadlulane', 'please', 'send', 'an', 'email', 'to','mediadesk@eskom.co.za'], 'incorrect'
+assert mc.word_splitter(twitter_df.copy()).loc[0, "Split Tweets"] == ['@bongadlulane', 'please', 'send', 'an', 'email', 'to','mediadesk@eskom.co.za'], 'incorrect'
 
 
 ### FUNCTION 7: Stop Word Remover ###
 
-from metrics_calculator import stop_words_http_remover
-assert stop_words_remover(twitter_df.copy()).loc[0, "Without Stop Words"] == ['@bongadlulane', 'send', 'email', 'mediadesk@eskom.co.za'], 'incorrect'
-assert stop_words_remover(twitter_df.copy()).loc[100, "Without Stop Words"] == ['#eskomnorthwest', '#mediastatement', ':', 'notice', 'supply', 'interruption', 'lichtenburg', 'area', 'https://t.co/7hfwvxllit'], 'incorrect'
+assert mc.stop_words_remover(twitter_df.copy()).loc[0, "Without Stop Words"] == ['@bongadlulane', 'send', 'email', 'mediadesk@eskom.co.za'], 'incorrect'
+assert mc.stop_words_remover(twitter_df.copy()).loc[100, "Without Stop Words"] == ['#eskomnorthwest', '#mediastatement', ':', 'notice', 'supply', 'interruption', 'lichtenburg', 'area', 'https://t.co/7hfwvxllit'], 'incorrect'
